@@ -10,12 +10,44 @@ package pixLab.classes;
 public class PictureTester
 {
   /** Method to test zeroBlue */
+  public static void testZeroRed()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.zeroRed();
+    beach.explore();
+  }
+  
+  public static void testZeroGreen()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.zeroGreen();
+    beach.explore();
+  }
+  
   public static void testZeroBlue()
   {
     Picture beach = new Picture("beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
+  }
+  
+  public static void testZeroColor()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.zeroColor();
+	  beach.explore();
+  }
+  
+  public static void testRandomColor()
+  {
+	  Picture randomCat = new Picture("caterpillar.jpg");
+	  randomCat.explore();
+	  randomCat.randomColor();
+	  randomCat.explore();
   }
   
   /** Method to test mirrorVertical */
@@ -25,6 +57,13 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+  public static void testVerticalRightToLeft()
+  {
+	  Picture caterpillar = new Picture("caterpillar.jpg");
+	    caterpillar.explore();
+	    caterpillar.mirrorVeritcalRightToLeft();
+	    caterpillar.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -59,21 +98,27 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+	  
+	testZeroRed();
+	testZeroGreen();
     testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
+    testZeroColor();
     //testNegate();
-    //testGrayscale();
+    //testGrayScale();
+    testRandomColor();
     //testFixUnderwater();
     testMirrorVertical();
-    //testMirrorTemple();
+    //testMirrorVeritcalRightToLeft();
+    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
