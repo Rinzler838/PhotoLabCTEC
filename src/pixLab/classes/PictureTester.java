@@ -34,6 +34,30 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testKeepOnlyBlue()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	    beach.explore();
+	    beach.keepOnlyBlue();
+	    beach.explore();
+  }
+
+  public static void testKeepOnlyRed()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	    beach.explore();
+	    beach.keepOnlyRed();
+	    beach.explore();
+  }
+  
+  public static void testKeepOnlyGreen()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	    beach.explore();
+	    beach.keepOnlyGreen();
+	    beach.explore();
+  }
+  
   public static void testZeroColor()
   {
 	  Picture beach = new Picture("beach.jpg");
@@ -58,12 +82,28 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
-  public static void testVerticalRightToLeft()
+  public static void testMirrorVerticalRightToLeft()
   {
 	  Picture caterpillar = new Picture("caterpillar.jpg");
-	    caterpillar.explore();
-	    caterpillar.mirrorVeritcalRightToLeft();
-	    caterpillar.explore();
+	  caterpillar.explore();
+	  caterpillar.mirrorVeritcalRightToLeft();
+	  caterpillar.explore();
+  }
+  
+  public static void testMirrorHorizontal()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.mirrorHorizontal();
+	  beach.explore();
+  }
+  
+  public static void testMirrorHorizontalBottomToTop()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.mirrorHorizontalBottomToTop();
+	  beach.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -73,6 +113,14 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+  }
+  
+  public static void testMirrorArms()
+  {
+	  Picture snowman = new Picture("snowman.jpg");
+	    snowman.explore();
+	    snowman.mirrorArms();
+	    snowman.explore();
   }
   
   /** Method to test the collage method */
@@ -99,26 +147,28 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
 	  
-	testZeroRed();
-	testZeroGreen();
-    testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    testZeroColor();
+	//testZeroRed();
+	//testZeroGreen();
+    //testZeroBlue();
+    testKeepOnlyBlue();
+    testKeepOnlyRed();
+    testKeepOnlyGreen();
+    //testZeroColor();
     //testNegate();
     //testGrayScale();
-    testRandomColor();
+    //testRandomColor();
     //testFixUnderwater();
-    testMirrorVertical();
-    //testMirrorVeritcalRightToLeft();
+    //testMirrorVertical();
+    testMirrorVerticalRightToLeft();
+    testMirrorHorizontal();
+    testMirrorHorizontalBottomToTop();
     testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

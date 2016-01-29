@@ -246,11 +246,11 @@ public class Picture extends SimplePicture
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
+	Pixel[][] pixels = this.getPixels2D();
     int mirrorPoint = 276;
     Pixel leftPixel = null;
     Pixel rightPixel = null;
     int count = 0;
-    Pixel[][] pixels = this.getPixels2D();
     
     // loop through the rows
     for (int row = 27; row < 97; row++)
@@ -265,6 +265,27 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorArms()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  int mirrorPoint = 193;
+	  Pixel topPixel = null;
+	  Pixel bottomPixel = null;
+	  int count = 0;
+	  
+	  for (int row = 162; row < 193; row++)
+	  {
+		  for (int col = 103 ; col < mirrorPoint; col++)
+		  {
+			  topPixel = pixels[row][col];
+			  bottomPixel = pixels[row][mirrorPoint - col+ mirrorPoint];
+			  bottomPixel.setColor(topPixel.getColor());
+		  }
+	  }
+	  
+	  
   }
   
   public void mirrorVeritcalRightToLeft()
@@ -287,32 +308,41 @@ public class Picture extends SimplePicture
   public void mirrorHorizontal()
   {
 	  {
-		    Pixel[][] pixels = this.getPixels2D();
-		    Pixel topPixel = null;
-		    Pixel bottomPixel = null;
-		    int width = pixels[0].length;
-		    for (int row = 0; row < pixels.length; row++)
+		  Pixel[][] pixels = this.getPixels2D();
+		  Pixel topPixel = null;
+		  Pixel bottomPixel = null;
+          int height = pixels.length;
+	      for (int row = 0; row < height / 2; row++)
 		    {
-		      for (int col = 0; col < width / 2; col++)
+	    	  for (int col = pixels[0].length - 1; col >= 0; col--)
 		      {
 		        topPixel = pixels[row][col];
-		        bottomPixel = pixels[row][width - 1 - col];
-		        topPixel.setColor(bottomPixel.getColor());
+		        bottomPixel = pixels[height - 1 - row][col];
+		        bottomPixel.setColor(topPixel.getColor());
 		      }
-		    } 
-		  }
+		    }
+	      }
   }
   
   public void mirrorHorizontalBottomToTop()
   {
-	  
+	  {
+		  Pixel[][] pixels = this.getPixels2D();
+		  Pixel topPixel = null;
+		  Pixel bottomPixel = null;
+          int height = pixels.length;
+	      for (int row = 0; row < height / 2; row++)
+		    {
+	    	  for (int col = pixels[0].length - 1; col >= 0; col--)
+		      {
+		        topPixel = pixels[row][col];
+		        bottomPixel = pixels[height - 1 - row][col];
+		        topPixel.setColor(bottomPixel.getColor());
+		      }
+		    }
+	      }
   }
-  
-  public void mirrorArms()
-  {
-	  
-  }
-  
+
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -395,9 +425,9 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("caterpillar.jpg");
+    Picture beach = new Picture("snowman.jpg");
     beach.explore();
-    beach.mirrorVeritcalRightToLeft();
+    beach.mirrorArms();
     beach.explore();
   }
   
