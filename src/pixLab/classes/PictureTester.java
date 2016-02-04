@@ -66,6 +66,22 @@ public class PictureTester
 	  beach.explore();
   }
   
+  public static void testNegate()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.negate();
+	  beach.explore();
+  }
+  
+public static void testGrayScale()
+{
+	Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.grayScale();
+	  beach.explore();
+}
+  
   public static void testRandomColor()
   {
 	  Picture randomCat = new Picture("caterpillar.jpg");
@@ -86,7 +102,7 @@ public class PictureTester
   {
 	  Picture caterpillar = new Picture("caterpillar.jpg");
 	  caterpillar.explore();
-	  caterpillar.mirrorVeritcalRightToLeft();
+	  caterpillar.mirrorVerticalRightToLeft();
 	  caterpillar.explore();
   }
   
@@ -118,9 +134,25 @@ public class PictureTester
   public static void testMirrorArms()
   {
 	  Picture snowman = new Picture("snowman.jpg");
-	    snowman.explore();
-	    snowman.mirrorArms();
-	    snowman.explore();
+	  snowman.explore();
+	  snowman.mirrorArms();
+	  snowman.explore();
+  }
+  
+  public static void testFixUnderwater()
+  {
+	  Picture beach = new Picture("water.jpg");
+	  beach.explore();
+	  beach.fixUnderwater();
+	  beach.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture beach = new Picture("seagull.jpg");
+	  beach.explore();
+	  beach.mirrorGull();
+	  beach.explore();
   }
   
   /** Method to test the collage method */
@@ -131,11 +163,26 @@ public class PictureTester
     canvas.explore();
   }
   
+  public static void testCopy()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.copy();
+	  beach.explore();
+  }
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
+    swan.explore();
+  }
+  
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2(10);
     swan.explore();
   }
   
@@ -147,29 +194,29 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
 	  
-	//testZeroRed();
-	//testZeroGreen();
-    //testZeroBlue();
+	testZeroRed();
+	testZeroGreen();
+    testZeroBlue();
     testKeepOnlyBlue();
     testKeepOnlyRed();
     testKeepOnlyGreen();
-    //testZeroColor();
-    //testNegate();
-    //testGrayScale();
-    //testRandomColor();
-    //testFixUnderwater();
-    //testMirrorVertical();
+    testZeroColor();
+    testNegate();
+    testGrayScale();
+    testRandomColor();
+    testFixUnderwater();
+    testMirrorVertical();
     testMirrorVerticalRightToLeft();
     testMirrorHorizontal();
     testMirrorHorizontalBottomToTop();
     testMirrorTemple();
     testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
+    testCopy();
+    testEdgeDetection();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
