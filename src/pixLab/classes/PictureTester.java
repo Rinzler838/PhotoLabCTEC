@@ -122,6 +122,14 @@ public static void testGrayScale()
 	  beach.explore();
   }
   
+  public static void testMirrorDiagonal()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.mirrorDiagonal();
+	  beach.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -194,27 +202,27 @@ public static void testGrayScale()
     // and comment out the ones you don't want
     // to run
 	  
-	testZeroRed();
-	testZeroGreen();
-    testZeroBlue();
-    testKeepOnlyBlue();
-    testKeepOnlyRed();
-    testKeepOnlyGreen();
-    testZeroColor();
-    testNegate();
-    testGrayScale();
-    testRandomColor();
-    testFixUnderwater();
-    testMirrorVertical();
-    testMirrorVerticalRightToLeft();
-    testMirrorHorizontal();
-    testMirrorHorizontalBottomToTop();
-    testMirrorTemple();
-    testMirrorArms();
-    testMirrorGull();
+//	testZeroRed();
+//	testZeroGreen();
+//    testZeroBlue();
+//    testKeepOnlyBlue();
+//    testKeepOnlyRed();
+//    testKeepOnlyGreen();
+//    testZeroColor();
+//    testNegate();
+//    testGrayScale();
+//    testRandomColor();
+//    testFixUnderwater();
+//    testMirrorVertical();
+//    testMirrorVerticalRightToLeft();
+//    testMirrorHorizontal();
+//    testMirrorHorizontalBottomToTop();
+//    testMirrorTemple();
+//    testMirrorArms();
+//    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    testCopy();
+//    testCopy();
     testEdgeDetection();
     testEdgeDetection2();
     //testChromakey();
